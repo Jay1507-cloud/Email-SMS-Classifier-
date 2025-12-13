@@ -1,0 +1,97 @@
+/* style.css -- light off-white theme with light-blue navbar */
+
+/* colors */
+:root{
+  --bg: #fbfbfa;          /* off-white page background */
+  --card: #ffffff;        /* card background */
+  --muted: #55606a;       /* muted text color */
+  --accent: #0ea5ff;      /* light-blue navbar */
+  --accent-strong: #0b95e6;
+  --success: #16a34a;
+  --danger: #ef4444;
+  --shadow: rgba(16,24,40,0.08);
+}
+
+/* page */
+html, body, [data-testid="stAppViewContainer"] > .main {
+  background: var(--bg) !important;
+  color: #0b1220 !important;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+/* NAVBAR / header */
+.nav {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background: linear-gradient(90deg,var(--accent), var(--accent-strong));
+  padding: 18px 26px;
+  border-radius: 10px;
+  color: white;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 20px rgba(11,25,40,0.08);
+}
+.nav-left { display:flex; flex-direction:column; }
+.brand { font-weight:700; font-size:22px; }
+.nav-sub { font-size:12px; opacity:0.95; margin-top:4px; }
+.nav-right { display:flex; gap:12px; align-items:center; }
+.nav-item { background: rgba(255,255,255,0.12); padding:6px 10px; border-radius:8px; font-weight:600; cursor:pointer; }
+
+/* card style */
+.card {
+  background: var(--card) !important;
+  border-radius: 12px !important;
+  padding: 18px !important;
+  box-shadow: 0 8px 30px var(--shadow) !important;
+  margin-bottom: 14px !important;
+}
+
+/* textarea */
+.stTextArea textarea {
+  background: #f6f7f8 !important;
+  border: 1px solid rgba(9,30,66,0.04) !important;
+  border-radius: 10px !important;
+  color: #0b1220 !important;
+  padding: 12px !important;
+}
+
+/* buttons */
+.stButton>button {
+  background: linear-gradient(180deg, #ffffff, #f1f5f9) !important;
+  color: #0b1220 !important;
+  border: 1px solid rgba(11,25,40,0.06) !important;
+  border-radius: 10px !important;
+  padding: 8px 14px !important;
+  font-weight:600;
+  box-shadow: 0 6px 18px rgba(11,25,40,0.06) !important;
+}
+
+/* success / danger boxes */
+.result-success {
+  background: #ecfdf5;
+  border-left: 4px solid var(--success);
+  color: #064e3b;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight:700;
+}
+.result-danger {
+  background: #fff1f2;
+  border-left: 4px solid var(--danger);
+  color: #7f1d1d;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight:700;
+}
+
+/* footer */
+.footer {
+  color: var(--muted);
+  font-size:13px;
+  text-align:center;
+  padding:12px 0;
+}
+
+/* small tweaks to streamlit elements */
+[data-testid="stHeader"] { display:none; }  /* hide default streamlit header */
+.css-1d391kg { padding:0 !important; }      /* remove some default padding */
